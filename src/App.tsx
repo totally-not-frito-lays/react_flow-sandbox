@@ -5,8 +5,6 @@ import {
   Controls,
   MiniMap,
   addEdge,
-  // useNodesState,
-  // useEdgesState,
   applyEdgeChanges,
   applyNodeChanges,
   type OnConnect,
@@ -23,7 +21,6 @@ import { AppNode } from './nodes/types';
 
 
 export default function App() {
-  // This version allows us to add and remove edges
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);
   
@@ -59,30 +56,3 @@ export default function App() {
     </ReactFlow>
   )
 }
-
-// Default app code
-// export default function App() {
-//   const [nodes, , onNodesChange] = useNodesState(initialNodes);
-//   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-//   const onConnect: OnConnect = useCallback(
-//     (connection) => setEdges((edges) => addEdge(connection, edges)),
-//     [setEdges]
-//   );
-
-//   return (
-//     <ReactFlow
-//       nodes={nodes}
-//       nodeTypes={nodeTypes}
-//       onNodesChange={onNodesChange}
-//       edges={edges}
-//       edgeTypes={edgeTypes}
-//       onEdgesChange={onEdgesChange}
-//       onConnect={onConnect}
-//       fitView
-//     >
-//       <Background />
-//       <MiniMap />
-//       <Controls />
-//     </ReactFlow>
-//   );
-// }
